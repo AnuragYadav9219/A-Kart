@@ -1,0 +1,60 @@
+import images from '../image';
+
+const groceryData = [
+    { id: 1, name: "Organic Brown Rice", dPrice: 120, price: 180, discount: 33, image: images.health },
+    { id: 2, name: "Whole Wheat Atta 5kg", dPrice: 250, price: 340, discount: 26, image: images.health },
+    { id: 3, name: "Fresh Tomatoes (1kg)", dPrice: 35, price: 60, discount: 42, image: images.health },
+    { id: 4, name: "Fortified Milk (1L)", dPrice: 55, price: 75, discount: 27, image: images.health },
+    { id: 5, name: "Free Range Eggs (12pcs)", dPrice: 95, price: 140, discount: 32, image: images.health },
+    { id: 6, name: "Cold-Pressed Groundnut Oil (1L)", dPrice: 175, price: 240, discount: 27, image: images.health },
+    { id: 7, name: "Organic Turmeric Powder", dPrice: 60, price: 90, discount: 33, image: images.health },
+    { id: 8, name: "Basmati Rice (1kg)", dPrice: 110, price: 160, discount: 31, image: images.health },
+    { id: 9, name: "Split Yellow Moong Dal (1kg)", dPrice: 95, price: 140, discount: 32, image: images.health },
+    { id: 10, name: "Brown Bread Loaf", dPrice: 38, price: 55, discount: 31, image: images.health },
+
+    { id: 11, name: "Sunflower Cooking Oil (1L)", dPrice: 160, price: 200, discount: 20, image: images.health },
+    { id: 12, name: "Green Tea Pack (100 bags)", dPrice: 199, price: 290, discount: 31, image: images.health },
+    { id: 13, name: "Peanut Butter Jar", dPrice: 145, price: 210, discount: 31, image: images.health },
+    { id: 14, name: "Refined Sugar (1kg)", dPrice: 52, price: 70, discount: 25, image: images.health },
+    { id: 15, name: "Rock Salt (Sendha Namak)", dPrice: 45, price: 75, discount: 40, image: images.health },
+    { id: 16, name: "Pasta (500g)", dPrice: 80, price: 120, discount: 33, image: images.health },
+    { id: 17, name: "Instant Noodles (6 pack)", dPrice: 90, price: 150, discount: 40, image: images.health },
+    { id: 18, name: "Fresh Spinach Bunch", dPrice: 25, price: 45, discount: 44, image: images.health },
+    { id: 19, name: "Sweet Corn Cans (2pcs)", dPrice: 110, price: 180, discount: 38, image: images.health },
+    { id: 20, name: "Mixed Dry Fruits (250g)", dPrice: 320, price: 450, discount: 29, image: images.health },
+
+    { id: 21, name: "Masala Chai (200g)", dPrice: 95, price: 130, discount: 27, image: images.health },
+    { id: 22, name: "Almonds (500g)", dPrice: 390, price: 580, discount: 33, image: images.health },
+    { id: 23, name: "Cashew Nuts (250g)", dPrice: 295, price: 430, discount: 31, image: images.health },
+    { id: 24, name: "Organic Jaggery Powder", dPrice: 85, price: 120, discount: 29, image: images.health },
+    { id: 25, name: "Honey Bottle (500ml)", dPrice: 199, price: 280, discount: 29, image: images.health },
+    { id: 26, name: "Chana Dal (1kg)", dPrice: 75, price: 110, discount: 32, image: images.health },
+    { id: 27, name: "Urad Dal (1kg)", dPrice: 85, price: 130, discount: 34, image: images.health },
+    { id: 28, name: "Besan (Gram Flour) 1kg", dPrice: 88, price: 135, discount: 35, image: images.health },
+    { id: 29, name: "Kitchen Salt (1kg)", dPrice: 20, price: 35, discount: 43, image: images.health },
+    { id: 30, name: "Tamarind Paste (200g)", dPrice: 60, price: 90, discount: 33, image: images.health },
+
+    { id: 31, name: "Lemon Pickle Jar", dPrice: 70, price: 110, discount: 36, image: images.health },
+    { id: 32, name: "Ginger Garlic Paste", dPrice: 45, price: 70, discount: 36, image: images.health },
+    { id: 33, name: "Fresh Bananas (1 dozen)", dPrice: 48, price: 70, discount: 31, image: images.health },
+    { id: 34, name: "Oranges (1kg)", dPrice: 69, price: 95, discount: 27, image: images.health },
+    { id: 35, name: "Apples (1kg)", dPrice: 120, price: 180, discount: 33, image: images.health },
+    { id: 36, name: "Coconut Oil (500ml)", dPrice: 130, price: 185, discount: 30, image: images.health },
+    { id: 37, name: "Herbal Tea Box", dPrice: 190, price: 260, discount: 27, image: images.health },
+    { id: 38, name: "Ghee (500ml)", dPrice: 310, price: 440, discount: 30, image: images.health },
+    { id: 39, name: "Corn Flakes (750g)", dPrice: 150, price: 210, discount: 29, image: images.health },
+    { id: 40, name: "Toor Dal (1kg)", dPrice: 99, price: 149, discount: 34, image: images.health },
+
+    { id: 41, name: "Milk Powder (400g)", dPrice: 220, price: 310, discount: 29, image: images.health },
+    { id: 42, name: "Salted Butter (100g)", dPrice: 49, price: 70, discount: 30, image: images.health },
+    { id: 43, name: "Cooking Soda", dPrice: 20, price: 30, discount: 33, image: images.health },
+    { id: 44, name: "Mustard Seeds (100g)", dPrice: 18, price: 30, discount: 40, image: images.health },
+    { id: 45, name: "Cloves (50g)", dPrice: 60, price: 90, discount: 33, image: images.health },
+    { id: 46, name: "Cinnamon Sticks (100g)", dPrice: 75, price: 110, discount: 31, image: images.health },
+    { id: 47, name: "Coriander Powder (200g)", dPrice: 50, price: 75, discount: 33, image: images.health },
+    { id: 48, name: "Dry Red Chilies (100g)", dPrice: 40, price: 65, discount: 38, image: images.health },
+    { id: 49, name: "Tandoori Masala (100g)", dPrice: 65, price: 95, discount: 32, image: images.health },
+    { id: 50, name: "Paneer (200g)", dPrice: 78, price: 110, discount: 29, image: images.health }
+];
+
+export default groceryData;

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #FFB86A inset !important; /* e.g., bg-yellow-300 */
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }

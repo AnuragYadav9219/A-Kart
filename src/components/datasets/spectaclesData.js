@@ -1,0 +1,61 @@
+import images from '../image';
+
+const spectaclesData = [
+    { id: 1, name: "Classic Round Glasses", dPrice: 1499, price: 2499, discount: 40, image: images.spec },
+    { id: 2, name: "Retro Square Frames", dPrice: 1699, price: 2999, discount: 43, image: images.spec },
+    { id: 3, name: "Aviator Sunglasses", dPrice: 1999, price: 3499, discount: 43, image: images.spec },
+    { id: 4, name: "Wayfarer Eyeglasses", dPrice: 1899, price: 2999, discount: 37, image: images.spec },
+    { id: 5, name: "Cat-Eye Frames", dPrice: 1799, price: 2899, discount: 38, image: images.spec },
+    { id: 6, name: "Transparent Spectacles", dPrice: 1599, price: 2599, discount: 38, image: images.spec },
+    { id: 7, name: "Rimless Glasses", dPrice: 2099, price: 3499, discount: 40, image: images.spec },
+    { id: 8, name: "Clip-on Sunglasses", dPrice: 2299, price: 3799, discount: 39, image: images.spec },
+    { id: 9, name: "Pilot Glasses", dPrice: 1899, price: 3199, discount: 41, image: images.spec },
+    { id: 10, name: "Foldable Reading Glasses", dPrice: 999, price: 1899, discount: 47, image: images.spec },
+
+    { id: 11, name: "Sports Sunglasses", dPrice: 2499, price: 4299, discount: 42, image: images.spec },
+    { id: 12, name: "Blue Light Filter Glasses", dPrice: 1399, price: 2499, discount: 44, image: images.spec },
+    { id: 13, name: "Polarized Sunglasses", dPrice: 2699, price: 4499, discount: 40, image: images.spec },
+    { id: 14, name: "Oversized Glasses", dPrice: 1799, price: 3099, discount: 42, image: images.spec },
+    { id: 15, name: "Rectangle Reading Glasses", dPrice: 1299, price: 2199, discount: 41, image: images.spec },
+    { id: 16, name: "Designer Eyeglasses", dPrice: 4999, price: 7999, discount: 38, image: images.spec },
+    { id: 17, name: "Round Metal Frames", dPrice: 2099, price: 3599, discount: 41, image: images.spec },
+    { id: 18, name: "Wooden Spectacles", dPrice: 3199, price: 5299, discount: 40, image: images.spec },
+    { id: 19, name: "UV Protection Sunglasses", dPrice: 1999, price: 3399, discount: 41, image: images.spec },
+    { id: 20, name: "Vintage Round Frames", dPrice: 2299, price: 3799, discount: 39, image: images.spec },
+
+    { id: 21, name: "Sports Goggles", dPrice: 2999, price: 4899, discount: 39, image: images.spec },
+    { id: 22, name: "Titanium Frames", dPrice: 5499, price: 8999, discount: 39, image: images.spec },
+    { id: 23, name: "Photochromic Glasses", dPrice: 2699, price: 4399, discount: 38, image: images.spec },
+    { id: 24, name: "Flexible Spectacles", dPrice: 1899, price: 2999, discount: 37, image: images.spec },
+    { id: 25, name: "Kid’s Colorful Glasses", dPrice: 999, price: 1899, discount: 47, image: images.spec },
+    { id: 26, name: "Luxury Sunglasses", dPrice: 6999, price: 10999, discount: 36, image: images.spec },
+    { id: 27, name: "Oval Reading Glasses", dPrice: 1499, price: 2599, discount: 42, image: images.spec },
+    { id: 28, name: "Magnetic Clip-on Glasses", dPrice: 2499, price: 4199, discount: 40, image: images.spec },
+    { id: 29, name: "Double Bridge Frames", dPrice: 2199, price: 3699, discount: 41, image: images.spec },
+    { id: 30, name: "Fashion Tinted Glasses", dPrice: 1799, price: 3099, discount: 42, image: images.spec },
+
+    { id: 31, name: "Smart Spectacles", dPrice: 5999, price: 8999, discount: 33, image: images.spec },
+    { id: 32, name: "Minimalist Glasses", dPrice: 1599, price: 2599, discount: 39, image: images.spec },
+    { id: 33, name: "Luxury Cat Eye Frames", dPrice: 4499, price: 6999, discount: 36, image: images.spec },
+    { id: 34, name: "Kid’s Sunglasses", dPrice: 1299, price: 2299, discount: 43, image: images.spec },
+    { id: 35, name: "Travel Folding Glasses", dPrice: 1199, price: 2099, discount: 43, image: images.spec },
+    { id: 36, name: "Prescription Sunglasses", dPrice: 3299, price: 5399, discount: 39, image: images.spec },
+    { id: 37, name: "Geometric Spectacles", dPrice: 1799, price: 3099, discount: 42, image: images.spec },
+    { id: 38, name: "Gradient Lens Glasses", dPrice: 2199, price: 3799, discount: 42, image: images.spec },
+    { id: 39, name: "Square Metal Frames", dPrice: 2099, price: 3599, discount: 41, image: images.spec },
+    { id: 40, name: "Hexagonal Spectacles", dPrice: 2399, price: 3899, discount: 38, image: images.spec },
+
+    { id: 41, name: "Blue Lens Reading Glasses", dPrice: 1399, price: 2299, discount: 39, image: images.spec },
+    { id: 42, name: "Eco-Friendly Glasses", dPrice: 2599, price: 4199, discount: 38, image: images.spec },
+    { id: 43, name: "High-Fashion Spectacles", dPrice: 4999, price: 7999, discount: 38, image: images.spec },
+    { id: 44, name: "Handmade Wooden Frames", dPrice: 3699, price: 5999, discount: 38, image: images.spec },
+    { id: 45, name: "Slim Frame Spectacles", dPrice: 1899, price: 3099, discount: 39, image: images.spec },
+    { id: 46, name: "Custom Engraved Glasses", dPrice: 4299, price: 6999, discount: 39, image: images.spec },
+    { id: 47, name: "Luxury Rimless Frames", dPrice: 5299, price: 8599, discount: 38, image: images.spec },
+    { id: 48, name: "Futuristic Sunglasses", dPrice: 5899, price: 9599, discount: 39, image: images.spec },
+    { id: 49, name: "Special Edition Frames", dPrice: 6499, price: 9999, discount: 35, image: images.spec },
+    { id: 50, name: "Festival Themed Spectacles", dPrice: 1999, price: 3399, discount: 41, image: images.spec },
+];
+
+
+export default spectaclesData;
