@@ -1,8 +1,28 @@
 import React from "react";
+import { CartContext } from './CartContext';
+import { useCart } from "./CartContext";
 import images from "./image";
 
 
 export function FashionCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+        console.log("Item added");
+    };
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -42,7 +62,9 @@ export function FashionCard(props) {
                         ))}
                     </div>
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
@@ -59,6 +81,24 @@ export function FashionCard(props) {
 
 
 export function ElectronicsCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+    };
+
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -85,9 +125,11 @@ export function ElectronicsCard(props) {
                         <span>{props.discount}%</span>
                         <span className='ml-1'>off</span>
                     </div>
-             
+
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
@@ -104,6 +146,28 @@ export function ElectronicsCard(props) {
 
 
 export function SpectaclesCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+    };
+
+
+
+
+
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -132,7 +196,9 @@ export function SpectaclesCard(props) {
                     </div>
 
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
@@ -148,6 +214,27 @@ export function SpectaclesCard(props) {
 
 
 export function GroceryCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+    };
+
+
+
+
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -176,7 +263,9 @@ export function GroceryCard(props) {
                     </div>
 
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
@@ -193,6 +282,26 @@ export function GroceryCard(props) {
 
 
 export function BeautyCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+    };
+
+
+
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -221,7 +330,9 @@ export function BeautyCard(props) {
                     </div>
 
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
@@ -238,6 +349,27 @@ export function BeautyCard(props) {
 
 
 export function SportsCard(props) {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const product = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            dPrice: props.dPrice,
+            price: props.price,
+            discount: props.discount,
+        };
+        addToCart(product);
+    };
+
+
+
+
+
+
+
+
     return (
         <div className='flex flex-col border-2 border-gray-400 w-full max-w-xs justify-center p-4 rounded-lg shadow-lg hover:shadow-orange-200 transition duration-300 ease-in-out'>
             <div>
@@ -266,7 +398,9 @@ export function SportsCard(props) {
                     </div>
 
                     <div className='text-white flex mt-3 gap-4 font-bold '>
-                        <button className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
+                        <button
+                            onClick={handleAddToCart}
+                            className=' hover:scale-105 border-2 text-black rounded-lg h-10 border-gray-400 w-full cursor-pointer'>
                             Add to cart
                         </button>
                         <button className='bg-blue-600 hover:scale-105 border-2 rounded-lg h-10 border-gray-400 w-full cursor-pointer'>

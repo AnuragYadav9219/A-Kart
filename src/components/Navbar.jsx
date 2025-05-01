@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import images from './image';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -8,6 +8,35 @@ function Navbar() {
     const [isSlide, setIsSlide] = useState(false);
     const navigate = useNavigate();
     const [hasAccount, setHasAccount] = useState(true);
+    const slideRef = useRef();
+    const navRef = useRef();
+
+
+    const handleOutsideClick = (e) => {
+        if (isOpen && navRef.current && !navRef.current.contains(e.target)) {
+            setIsOpen(false);
+        }
+
+        if (isSlide && slideRef.current && !slideRef.current.contains(e.target)) {
+            setIsSlide(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, [isOpen, isSlide]);
+
+    const handleNavClick = () => {
+        setIsOpen(false);
+        setIsSlide(false);
+    };
+
+
+
+
 
     const handleLoginClick = () => {
         if (hasAccount) {
@@ -47,6 +76,7 @@ function Navbar() {
 
                             <NavLink
                                 to="/cart"
+                                onClick={handleNavClick}
                                 className={(e) => {
                                     return e.isActive ? "text-black bg-gray-200 rounded-xl p-2 px-3 flex items-center font-bold justify-center transition duration-200 ease-in-out border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105" :
                                         "p-2 px-3 flex items-center font-bold justify-center transition duration-200 ease-in-out rounded-xl border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105"
@@ -56,31 +86,41 @@ function Navbar() {
                                 Cart
                             </NavLink>
 
-                            <button
+                            {/* <button
                                 onClick={handleLoginClick}
                                 className={`font-bold py-2 px-6 ml-8 h-full rounded-xl cursor-pointer border-2 border-gray-200 hover:scale-105 transition duration-200 ease-in-out hover:bg-gray-100 
                                     ${hasAccount ? 'text-black' : 'text-black'} 
                                 `}
                             >
                                 {hasAccount ? 'Login' : 'Sign Up'}
+                            </button> */}
+
+
+                            <button
+                                onClick={handleLoginClick}
+                                className={`font-bold py-2 px-6 ml-8 h-full rounded-xl cursor-pointer border-2 border-gray-200 hover:scale-105 transition duration-200 ease-in-out hover:bg-gray-100 
+                                    ${hasAccount ? 'text-black' : 'text-black'} 
+                                `}
+                            >
+                                <span onClick={() => setHasAccount(!hasAccount)} className="text-blue-500 cursor-pointer underline">
+                                    {hasAccount ? "Sign Up" : "Login"}
+                                </span>
                             </button>
 
                         </h1>
 
                         <button onClick={toggleSlide} className=' p-2 h-10 flex justify-center w-10 ml-10 rounded-4xl focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer shadow-sm hover:shadow-orange-300 hover:scale-90 hover:bg-gray-100 transition-shadow duration-500 ease-in-out focus-within:shadow-[inset_0_2px_6px_rgba(255,184,106,0.5)]' >
-                            {isSlide ?
-                                <img src={images.dot} alt="Dot" className='h-6 px-1' /> :
-                                <img src={images.dot} alt="Dot" className='h-6 px-1' />
-                            }
+                            <img src={images.dot} alt="Dot" className='h-6 px-1' />
                         </button>
 
                         {/* Desktop Slide Bar */}
                         {isSlide && (
-                            <div className="fixed top-20 right-0 w-1/6 h-full bg-white shadow-md z-50">
+                            <div ref={slideRef} className="fixed top-20 right-0 w-1/6 h-full bg-white shadow-md z-50">
                                 <ul className="flex flex-col items-center py-4 h-full space-y-2 text-gray-700">
 
                                     <NavLink
                                         to="/"
+                                        onClick={handleNavClick}
                                         className={(e) => {
                                             return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                                 "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -92,6 +132,7 @@ function Navbar() {
 
                                     <NavLink
                                         to="/products"
+                                        onClick={handleNavClick}
                                         className={(e) => {
                                             return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                                 "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -103,6 +144,7 @@ function Navbar() {
 
                                     <NavLink
                                         to="/services"
+                                        onClick={handleNavClick}
                                         className={(e) => {
                                             return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                                 "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -114,6 +156,7 @@ function Navbar() {
 
                                     <NavLink
                                         to="/categories"
+                                        onClick={handleNavClick}
                                         className={(e) => {
                                             return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                                 "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -152,11 +195,12 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="fixed lg:hidden md:hidden top-19 right-0 w-1/2 h-full bg-white shadow-md z-50">
+                <div ref={navRef} className="fixed lg:hidden md:hidden top-19 right-0 w-1/2 h-full bg-white shadow-md z-50">
                     <ul className="flex flex-col items-center py-4 h-full space-y-2 text-gray-700">
 
                         <NavLink
                             to="/"
+                            onClick={handleNavClick}
                             className={(e) => {
                                 return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                     "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -168,6 +212,7 @@ function Navbar() {
 
                         <NavLink
                             to="/cart"
+                            onClick={handleNavClick}
                             className={(e) => {
                                 return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                     "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -179,6 +224,7 @@ function Navbar() {
 
                         <NavLink
                             to="/products"
+                            onClick={handleNavClick}
                             className={(e) => {
                                 return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                     "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -190,6 +236,7 @@ function Navbar() {
 
                         <NavLink
                             to="/services"
+                            onClick={handleNavClick}
                             className={(e) => {
                                 return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                     "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -201,6 +248,7 @@ function Navbar() {
 
                         <NavLink
                             to="/categories"
+                            onClick={handleNavClick}
                             className={(e) => {
                                 return e.isActive ? "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 " :
                                     "text-lg font-medium cursor-pointer hover:text-yellow-500 hover:scale-105 "
@@ -211,7 +259,10 @@ function Navbar() {
                         <hr className="w-3/4 text-gray-300" />
 
                         <button
-                            onClick={handleLoginClick}
+                            onClick={() => {
+                                handleLoginClick();
+                                handleNavClick();
+                            }} 
                             className={`font-medium underline cursor-pointer hover:underline hover:text-yellow-500 hover:scale-105 ${hasAccount ? 'text-green-500' : 'text-red-500'}`}
                         >
                             {hasAccount ? 'Login' : 'Sign Up'}

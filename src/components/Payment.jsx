@@ -46,7 +46,7 @@ const Payment = () => {
                 <form
                     action="#"
                     className='space-y-4'
-                    onClick={handleSubmit}
+                    
                 >
                     {paymentMethod === 'card' && (
                         <>
@@ -113,6 +113,7 @@ const Payment = () => {
                     )}
 
                     <button
+                        onClick={handleSubmit}
                         type='submit'
                         className='w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition duration-300 cursor-pointer'
                     >
