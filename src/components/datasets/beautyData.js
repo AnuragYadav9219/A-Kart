@@ -56,6 +56,7 @@ const beautyData = [
     { id: 48, name: "Makeup Pouch", dPrice: 150, price: 210, discount: 29, image: images.beauty },
     { id: 49, name: "Hair Detangler Spray", dPrice: 240, price: 350, discount: 31, image: images.beauty },
     { id: 50, name: "Facial Massage Cream", dPrice: 280, price: 400, discount: 30, image: images.beauty }
+
 ];
 
 

@@ -5,9 +5,19 @@ import Services from './components/Services';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import Payment from './components/Payment';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import About from './components/About';
+import Contact from './components/Contact';
+import ShippingInfo from './components/ShippingInfo';
+import Return from './components/Return';
+import { Popular } from './components/Popular';
+import FAQs from './components/Faq';
+import { Categories } from './components/Categories';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Categories, Home, Login, SignUp, DefaultCategoryContent } from './components/Routers';
-import { Fashion, Electronics, Spectacles, Grocery, Beauty, Sports } from './components/CategoryPage';
+import { Home, Login, SignUp } from './components/Routers';
+
+
+// import { Fashion, Electronics, Spectacles, Grocery, Beauty, Sports } from './components/CategoryPage';
 
 
 const App = () => {
@@ -39,6 +49,33 @@ const App = () => {
             <>
               <Navbar />
               <SignUp />
+            </>
+          )
+        },
+        {
+          path: "/privacyPolicy",
+          element: (
+            <>
+              <Navbar />
+              <PrivacyPolicy />
+            </>
+          )
+        },
+        {
+          path: "/about",
+          element: (
+            <>
+              <Navbar />
+              <About />
+            </>
+          )
+        },
+        {
+          path: "/contact",
+          element: (
+            <>
+              <Navbar />
+              <Contact />
             </>
           )
         },
@@ -79,47 +116,53 @@ const App = () => {
           )
         },
         {
-          path: "/categories",
+          path: "/popular/*",
+          element: (
+            <>
+              <Navbar />
+              <Popular />
+            </>
+          )
+        },
+
+        {
+          path: "/shippingInfo",
+          element: (
+            <>
+              <Navbar />
+              <ShippingInfo />
+            </>
+          )
+        },
+        {
+          path: "/return",
+          element: (
+            <>
+              <Navbar />
+              <Return />
+            </>
+          )
+        },
+        {
+          path: "/faq",
+          element: (
+            <>
+              <Navbar />
+              <FAQs />
+            </>
+          )
+        },
+
+        {
+          path: "/categories/:categoryName?",
           element: (
             <>
               <Navbar />
               <Categories />
             </>
-          ),
-
-          children: [
-            {
-              index: true,
-              element: <DefaultCategoryContent />
-            },
-            {
-              path: "fashion",
-              element: <Fashion />
-            },
-            {
-              path: "electronics",
-              element: <Electronics />
-            },
-            {
-              path: "spectacles",
-              element: <Spectacles />
-            },
-            {
-              path: "grocery",
-              element: <Grocery />
-            },
-            {
-              path: "beauty",
-              element: <Beauty />
-            },
-            {
-              path: "sports",
-              element: <Sports />
-            }
-
-          ]
-
+          )
         }
+
       ]
     }
   ]);

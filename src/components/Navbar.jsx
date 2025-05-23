@@ -53,16 +53,14 @@ function Navbar() {
         <nav className="bg-white shadow-md p-4 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <div className="flex justify-center items-center text-3xl font-bold font-mono">
-                    <h1 className="whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                        A-Kart
-                    </h1>
+                <div className="">
+                    <img src={images.acart} alt="" className='h-12 rounded-full ' />
                 </div>
 
 
                 {/* Desktop Menu */}
-                <div className='flex justify-around items-center w-full'>
-                    <div className='hidden md:flex items-center h-10 border-blue-600 border-2 focus:outline-none w-3/6 rounded-xl'>
+                <div className='flex justify-between items-center w-full'>
+                    <div className='hidden ml-20 md:flex items-center h-10 border-blue-600 border-2 focus:outline-none w-3/6 rounded-xl'>
                         <h1>
                             <img src={images.search} alt="Search" className='h-5 px-2 my-1 rounded-2xl' />
                         </h1>
@@ -71,34 +69,24 @@ function Navbar() {
                         </h1>
                     </div>
 
-                    <div className='hidden md:flex items-center justify-between'>
+                    <div className='hidden md:flex items-center md:ml-6 justify-between'>
                         <h1 className='flex'>
 
                             <NavLink
                                 to="/cart"
                                 onClick={handleNavClick}
                                 className={(e) => {
-                                    return e.isActive ? "text-black bg-gray-200 rounded-xl p-2 px-3 flex items-center font-bold justify-center transition duration-200 ease-in-out border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105" :
-                                        "p-2 px-3 flex items-center font-bold justify-center transition duration-200 ease-in-out rounded-xl border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105"
+                                    return e.isActive ? "text-black h-12  bg-gray-200 rounded-xl p-2 px-3 flex items-center font-bold justify-center transition duration-200 ease-in-out border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105" :
+                                        "p-2 px-3 flex items-center h-12  font-bold justify-center transition duration-200 ease-in-out rounded-xl border-2 border-gray-200 hover:bg-gray-100 cursor-pointer hover:scale-105"
                                 }}
                             >
                                 <img src={images.cart} alt="Cart" />
                                 Cart
                             </NavLink>
 
-                            {/* <button
-                                onClick={handleLoginClick}
-                                className={`font-bold py-2 px-6 ml-8 h-full rounded-xl cursor-pointer border-2 border-gray-200 hover:scale-105 transition duration-200 ease-in-out hover:bg-gray-100 
-                                    ${hasAccount ? 'text-black' : 'text-black'} 
-                                `}
-                            >
-                                {hasAccount ? 'Login' : 'Sign Up'}
-                            </button> */}
-
-
                             <button
                                 onClick={handleLoginClick}
-                                className={`font-bold py-2 px-6 ml-8 h-full rounded-xl cursor-pointer border-2 border-gray-200 hover:scale-105 transition duration-200 ease-in-out hover:bg-gray-100 
+                                className={`font-bold py-2 px-2 ml-8 h-12 whitespace-nowrap text-ellipsis rounded-xl cursor-pointer border-2 border-gray-200 hover:scale-105 transition duration-200 ease-in-out hover:bg-gray-100 
                                     ${hasAccount ? 'text-black' : 'text-black'} 
                                 `}
                             >
@@ -173,7 +161,7 @@ function Navbar() {
 
 
                     {/* Mobile Menu Toggle */}
-                    <div className="md:hidden pl-4 justify-between w-5/6 flex">
+                    <div className="md:hidden  pl-4 justify-between w-full flex">
                         <div className='flex lg:hidden md:hidden items-center h-10 border-blue-600 border-2 focus:outline-none w-5/6 rounded-xl'>
                             <img src={images.search} alt="Search" className='h-5 px-2 my-1 rounded-2xl ' />
                             <input type="text"

@@ -5,6 +5,7 @@ const cardData = [
   {
     "id": 1,
     "name": "Stylish Shirt",
+    "subCategory": "Men",
     "dPrice": 1380,
     "price": 2876,
     "discount": 52,

@@ -1,4 +1,3 @@
-import React from 'react';
 import images from '../components/image';
 import { motion } from 'framer-motion';
 import '../App.css';
@@ -7,14 +6,14 @@ import { Card4 } from './Card';
 function Dashboard() {
     return (
         <div>
-            <div className='relative w-full h-11/12 overflow-hidden py-15 md:px-10  lg:px-15 flex flex-col items-center justify-between '>
+            <div className='relative w-full h-11/12 overflow-hidden py-10 md:px-10 lg:px-15 flex flex-col items-center justify-between '>
 
                 {/* Desktop View */}
                 <div>
                     <img
                         src={images.theme}
                         alt="Landing Page"
-                        className="hidden md:block rounded-2xl w-screen max-h-screen border border-gray-400 object-cover hover:scale-95 transition duration-200 ease-in-out"
+                        className="hidden md:block rounded-2xl w-screen border h-[550px] border-gray-400 object-cover transition duration-200 ease-in-out"
                     />
                 </div>
 
@@ -76,7 +75,7 @@ function Dashboard() {
 
             </div>
             <div className='lg:hidden'>
-                <Card4 />
+                <Card4 title="Featured Products" products={["Mobiles", "Electronics", "Beauty", "Cosmetics"]} />
             </div>
         </div>
     );

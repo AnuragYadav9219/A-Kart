@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { Tabs, Tab } from "@mui/material";
 import product from '../components/datasets/product';
@@ -13,7 +12,6 @@ const Products = () => {
 
     return (
         <div className='flex flex-col justify-center lg:px-30 gap-16 p-6'>
-
             <div className='flex flex-col md:flex-row gap-6 items-center justify-between w-full'>
                 <div className='w-full md:w-1/2 lg:w-1/3'>
                     <img src={product.mainImage}
